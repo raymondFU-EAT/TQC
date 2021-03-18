@@ -69,10 +69,111 @@ def score():
 	print('%.2f' %(sum(g)/8))
 
 
+# 606. 二維串列行列數
+# 題目設計要求:
+# 輸入兩個正整數rows、cols，分別表示二維串列lst 的「第一個維度大小」與「第二個維度大小」。
+# 串列元素[row][col]所儲存的數字，
+# 其規則為：row、col 的交點值 = 第二個維度的索引col – 第一個維度的索引row。 
+# 接著以該串列作為參數呼叫函式compute()輸出串列。
+# Tips. 欄寬為4
+# Example Input:4,7
+def compute(rows, cols):
+	for r in range(rows):
+		for c in range(cols):
+			print('%4d' %(c-r), end=' ')
+		print()	
+
+
+# 607. 成績計算
+# 題目設計要求:
+# 輸入三位學生各五筆成績，接著再計算並輸出每位學生的總分及平均分數。
+# Tips. 平均分數輸出到小數點後第二位
+# Tips. 先顯示學生順序後輸入(輸出:The 1st student: 然後輸入資料,依序進行)
+def scores():
+	info = ['The 1st student: ', 'The 2nd student: ', 'The 3rd student: ']
+	scores = [[], [], []]
+	for i in range(3):
+		print(info[i])
+		for j in range(5):
+			scores[i].append(eval(input()))
+	for i in range(3):
+		print('Student %d' %(i+1))
+		print('#Sum %d' % sum(scores[i]))
+		print('#Average %.2f' % (sum(scores[i])/5))
+
+
+# 608. 最大最小值索引
+# 題目設計要求:
+# 建立一個3*3的矩陣，其內容為從鍵盤輸入的整數（不重複），接著輸出矩陣最大值與最小值的索引。
+def N():
+	N = []
+	for i in range(9):
+		N.append(eval(input()))
+	largest = N.index(max(N))
+	smallest = N.index(min(N))
+	print("Index of the largest number %d is: (%d, %d)" % (max(N), largest//3, largest % 3))
+	print("Index of the smallest number %d is: (%d, %d)" % (min(N), smallest//3, smallest % 3))
+
+
+# 609. 矩陣相加
+# 題目設計要求:
+# 建立兩個2*2的矩陣，其內容為從鍵盤輸入的整數，接著輸出這兩個矩陣的內容以及它們相加的結果。
+# Tips. 注意輸出格式
+# Tips. 先顯示當前矩陣後輸入(輸出:[1, 2]: 然後輸入資料,依序進行)
+def mix():
+	s1,s2=([[0],[0]],[[0],[0]]), ([[0],[0]],[[0],[0]])
+	print('Enter matrix 1:')
+	for i in range(2):
+		for j in range(2):
+			s1[i][j] = eval(input('[%d, %d]:'%(i+1, j+1)))
+	print('Enter matrix 2:')
+	for i in range(2):
+		for j in range(2):
+			s2[i][j] = eval(input('[%d, %d]:'%(i+1, j+1)))
+	print('Matrix 1:')
+	for i in range(2):
+		for j in range(2):
+			print(s1[i][j], end = ' ')
+		print()
+	print('Matrix 2:')
+	for i in range(2):
+		for j in range(2):
+			print(s2[i][j], end = ' ')
+		print()
+	print('Sum of 2 matrices:')
+	for i in range(2):
+		for j in range(2):
+			print(s1[i][j]+s2[i][j], end = ' ')
+		print()
+
+
+# 610. 平均溫度
+# 題目設計要求:
+# 輸入四週各三天的溫度，接著計算並輸出這四週的平均溫度及最高、最低溫度。
+# Tips. 平均溫度輸出到小數點後第二位
+# Tips. 最高溫度及最低溫度的輸出，如為31時，則輸出31，如為31.1時，則輸出31.1
+# Tips. 先顯示當前天數後輸入(輸出:Day 1: 然後輸入資料,依序進行)
+def tmp():
+	t = []
+	for i in range(4):
+		print('Week %d:' % (i+1))
+		for j in range(3):
+			t.append(eval(input('Day %d:' % (j+1))))
+	print('Average: %.2f' % (sum(t)/12))
+	print('Highest: %.1f' % max(t))
+	print('Lowest: %.1f' % min(t))
+
+
 
 def main():
-	numm() # 601
-	poker() # 602
-	line1() # 603
-	many() # 604
-	score() # 605
+	# numm() # 601
+	# poker() # 602
+	# line1() # 603
+	# many() # 604
+	# score() # 605
+	# compute(eval(input()), eval(input())) # 606
+	# scores() # 607
+	# N() # 608
+	# mix() #609
+	# tmp() # 610
+main()
