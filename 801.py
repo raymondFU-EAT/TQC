@@ -4,7 +4,7 @@
 def d801():
 	s = input()
 	for i in range(len(s)):
-		print(f"Index of '{len(s)}': {i}")
+		print(f"Index of '{s[i}': {i}")
 
 
 # 802. 字元對應
@@ -40,10 +40,10 @@ def d804():
 # 輸入一個長度為6的字串，將此字串分別置於10個欄位的寬度的左邊、中間和右邊，
 # 並顯示這三個結果，左右皆以直線「|」（Vertical bar）作為邊界。
 def d805():
-	s = input()
-	print(f'|{s:<10s}|')
-	print(f'|{s:^10s}|')
-	print(f'|{s:>10s}|')
+	n = input()
+	print(f'|{n:<10s}|')
+	print(f'|{n:^10s}|')
+	print(f'|{n:>10s}|')
 
 
 # 806. 字元次數計算
