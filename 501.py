@@ -54,7 +54,8 @@ def init():
 	def compute():
 		a, x, y = input(), eval(input()), eval(input())
 		for i in range(y):
-			print((a+' ')*x)	
+			print((a+' ')*x)
+		print()
 	compute()	
 
 
@@ -66,9 +67,9 @@ def init():
 def val():
 	def compute():
 		a, b, c = eval(input()), eval(input()), eval(input())
-		y = b**2-4*a*c
-		x1, x2 = (-b+(y)**0.5)/(2*a), (-b-(y)**0.5)/(2*a)
-		if y >= 0:
+		y = b**2-4*a*c		
+		if y > 0:
+			x1, x2 = (-b+(y)**0.5)/(2*a), (-b-(y)**0.5)/(2*a)
 			print('%.1f,%.2f' % (x1, x2))
 		else:
 			print('Your equation has no root.')
@@ -153,4 +154,4 @@ def main():
 	# max() # 508
 	mux() # 509
 	count() # 510
-main()
+# main()
