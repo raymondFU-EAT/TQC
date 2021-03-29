@@ -77,7 +77,7 @@ def mul():
 	n = eval(input())
 	for i in range(1, n+1):
 		for j in range(1, n+1):
-			print('%-2d%-2s%-2d%-2s%-4d' % (i, '*', j, '=', i*j), end = '')
+			print('%-2d%-2s%-2d%-2s%-4d' % (j, '*', i, '=', i*j), end = '')
 		print('')
 
 
@@ -87,14 +87,13 @@ def mul():
 # 每一筆測試資料是一個正整數（由使用者輸入），將此正整數的每位數全部加總起來。
 # Tips. 需每輸入一次資料就輸出一次結果
 def sumall():
+	n=[]
+	for i in range(eval(input())):
+		n=input()
+		s=list(map(eval,n))
+		print(n,sum(s))
 	
-	time = eval(input()) # 輸入欲輸入筆數
-	for t in range(time):
-		num = 0 # 設定的數字也需要在迴圈中,不然會繼續累加
-		n = input() # 輸入資料 程式碼最簡潔的解題方法是直接使用預設字串型態做計算
-		for i in n: # 把字串讀入
-			num += int(i) # 把字元轉為整數做加總
-		print('Sum of all digits of', n, 'is', num)	
+		
 	
 	
 # 309. 存款總額
@@ -104,13 +103,12 @@ def sumall():
 # Tips. 請注意年收益率的輸入單位為"百分比",計算時需注意
 # Tips. 下一個月的存款為上一個月之存款總額
 def dep():
-	money, rate, month = (eval(input()), eval(input()), eval(input()))
-	num = 0
+	money, rate, month = (eval(input()), eval(input()), eval(input()))	
 	print('Month \t Amount')
-	for mth in range(month):		
-		num += 1
-		money = money+(money*((rate/12)/100))
-		print('%3d\t%.2f' % (num, money))
+	for i in range(month):
+		print(f'{(i+1):3d} \t {(money+money*rate/1200):.2f}')
+		money+=money*rate/1200
+		
 
 
 # 310. 迴圈公式計算
@@ -135,4 +133,4 @@ def main():
 	sumall()# 308
 	dep()# 309
 	n()# 310
-main()
+# main()
