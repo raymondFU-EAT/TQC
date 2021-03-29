@@ -115,20 +115,7 @@ def money():
 # Tips. 轉換規則: 十進位0~9的十六進位值為其本身，十進位10~15的十六進位值為A~F
 def num():
 	num = eval(input())
-	if num < 10:
-		print(num)
-	elif num == 10:
-		print('A')
-	elif num == 11:
-		print('B')
-	elif num == 12:
-		print('C')
-	elif num == 13:
-		print('D')
-	elif num == 14:
-		print('E')
-	elif num == 15:
-		print('F')
+	print(f'{num:X}')
 
 
 # 209距離判斷
@@ -151,11 +138,11 @@ def dis():
 # 若可以，則輸出該三角形之周長；否則顯示【Invalid】。
 # Tips. 檢查方法: 任意兩個邊長之總和大於第三邊長。
 def line():
-	x , y, z = (eval(input()), eval(input()),eval(input()))
-	if x+y<z or y+z<x or x+z<y:
-		print('Invalid')
-	else:
+	x , y, z = eval(input()), eval(input()),eval(input())
+	if x+y>z and y+z>x and x+z>y:
 		print(x+y+z)
+	else:
+		print('Invalid')
 
 def main():
 	N()#201
@@ -168,4 +155,4 @@ def main():
 	num()# 208
 	dis()# 209
 	line()# 210
-main()
+# main()
