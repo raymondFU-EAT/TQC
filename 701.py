@@ -55,16 +55,7 @@ def d703():
 	print(n)
 	print(n[:3])
 	print(n[-3:])
-	N = ()
-	while(True):
-	    tmp = input()
-	    if(tmp == 'end'):
-	        break
-	    N += (tmp,)
-	print(N)
-	print(N[:3]) #印出0,1,2的元素
-	print(N[-3:]) #印出(tuple長度-3)到最後一個元素
-
+	
 
 # 704. 集合條件判斷
 # 題目設計要求:
@@ -81,8 +72,7 @@ def d704():
 	print('Max: ', max(n))
 	print('Min: ', min(n))
 	print('Sum: ', sum(n))
-	N = set()
-
+	
 
 # 705. 子集合與超集合
 # 題目設計要求:
@@ -97,14 +87,14 @@ def d705():
 
 	print('Input to set2: ')
 	for i in range(3):
-		s1.add(eval(input()))
+		s2.add(eval(input()))
 
 	print('Input to set3: ')
 	for i in range(9):
-		s1.add(eval(input()))
+		s3.add(eval(input()))
 
-	print('set2 is subset of set1: ', s1&s2 == s2)
-	print('set3 is superset of set1: ', s1&s3 == s1)
+	print('set2 is subset of set1: ', s2<=s1)
+	print('set3 is superset of set1: ', s3>=s1)
 
 
 # 706. 全字母句
