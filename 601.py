@@ -10,7 +10,7 @@ def numm():
 		if i % 2 == 0: # 如果輸入到2倍數的次數時進行加總
 			num += x[i] # 列表中抓出的偶數位加總 
 	for i in range(12):
-		print('%3d' % x[i],end=' ')
+		print(f'{x[i]:3d}',end=' ')
 		if(i+1) % 3 == 0: # 因為i不包含起始值,所以要要分3列時需要+1
 			print()		
 	print(num)
@@ -38,8 +38,8 @@ def line1():
 	line = []
 	for i in range(10):
 		line.append(eval(input()))
-	line.sort(reverse=True)
-	print(line[0], line[1], line[2])
+	line=sort(line)
+	print(line[9], line[8], line[7])
 
 
 # 604. 眾數
@@ -66,7 +66,7 @@ def score():
 	g.remove(max(g))
 	g.remove(min(g))
 	print(sum(g))
-	print('%.2f' %(sum(g)/8))
+	print(f'{(sum(g)/8:.2f}')
 
 
 # 606. 二維串列行列數
@@ -80,7 +80,7 @@ def score():
 def compute(rows, cols):
 	for r in range(rows):
 		for c in range(cols):
-			print('%4d' %(c-r), end=' ')
+			print(f'{(c-r):4d}', end=' ')
 		print()	
 
 
@@ -121,7 +121,8 @@ def N():
 # Tips. 注意輸出格式
 # Tips. 先顯示當前矩陣後輸入(輸出:[1, 2]: 然後輸入資料,依序進行)
 def mix():
-	s1,s2=([[0],[0]],[[0],[0]]), ([[0],[0]],[[0],[0]])
+	s1=[0,0],[0,0]
+	s2=[0,0],[0,0]
 	print('Enter matrix 1:')
 	for i in range(2):
 		for j in range(2):
