@@ -14,8 +14,9 @@ def d901():
 # 檔案讀取完成後要關閉。
 def d902():
 	with open('read.txt', 'r', encoding='utf-8') as f:
-		f = list(map(eval, f.read().split(' ')))
-		print(sum(f))
+		f = f.read().split()
+		d = list(map(eval, f))
+		print(sum(d))
 
 
 # 903. 成績資料
@@ -143,24 +144,24 @@ def d910():
 	with open('read.dat', 'r', encoding='utf-8') as f:
 		for i in f:
 			f =i.split(' ')
-			if i[2] == 1:
+			if f[2] == '1':
 				m+=1
-			if i[2] == 0:
+			if f[2] == '0':
 				w+=1
 			print(i)
 	print(f"Number of males: {m}")
 	print(f"Number of females: {w}")   
 
 	
-def main():
-	d901()
-	d902()
-	d903()
-	d904()
-	d905()
-	d906()
-	d907()
-	d908()
-	d909()
-	d910()
+# def main():
+# 	d901()
+# 	d902()
+# 	d903()
+# 	d904()
+# 	d905()
+# 	d906()
+# 	d907()
+# 	d908()
+# 	d909()
+# 	d910()
 # main()
