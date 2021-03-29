@@ -26,18 +26,18 @@ def minf1():
 # 輸入兩個正整數a、b（a<=b），
 # 輸出從a到b（包含a和b）之間4或9的倍數（一列輸出十個數字、欄寬為4、靠左對齊）以及倍數之個數、總和。
 def sum1():
-	a, b = (eval(input()), eval(input()))
-	count, add = 0, 0
-	for num in range(a, b+1):
-		if num % 4 == 0 or num % 9 == 0:
-			print('%-4d' % num, end='')
-			count += 1
-			add += num
-			if count % 10 == 0:
+	a,b=eval(input()),eval(input())
+	n=[]
+	for i in range(a,b+1):
+		if i%4==0 or i%9==0:
+			print(f'{i:<4d}',end='')
+			n.append(i)
+			if len(n)%10==0:
 				print()
+			
 	print()
-	print(count)
-	print(add)		
+	print(len(n))
+	print(sum(n))		
 
 
 # 404. 數字反轉判斷
@@ -56,7 +56,9 @@ def turn():
 def gpa():
 	while True:
 		n = eval(input())
-		if 100>=n>=90:
+		if n == -9999:
+			break
+		elif 100>=n>=90:
 			print('A')
 		elif 89>=n>=80:
 			print('B')
@@ -66,9 +68,7 @@ def gpa():
 			print('D')
 		elif 59>=n>=0:
 			print('E')	
-		elif n == -9999:
-			break
-
+		
 
 # 406. 不定數迴圈-BMI計算
 # 題目設計要求:
@@ -175,4 +175,4 @@ def main():
 	even()# 408
 	vote()# 409
 	tri()# 410
-main()
+# main()
